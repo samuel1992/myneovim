@@ -55,8 +55,8 @@ keymap("n", "<Leader>y", '"+y', opts)
 keymap("n", "<Leader>p", '"+p', opts)
 
 -- Telescope
-keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=ivy", opts)
-keymap("n", "<Leader>b", ":Telescope buffers previewer=false theme=ivy", opts)
+keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=ivy<cr>", opts)
+keymap("n", "<Leader>b", ":Telescope buffers previewer=false theme=ivy<cr>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep theme=ivy<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope oldfiles theme=ivy<cr>", opts)
 

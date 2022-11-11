@@ -82,6 +82,15 @@ return packer.startup(function(use)
     commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
   }
 
+  -- Colorschemes
+  use { "evturn/cosmic-barf" }
+  use { "folke/tokyonight.nvim" }
+  use { "lunarvim/darkplus.nvim" }
+  use { "lifepillar/vim-solarized8" }
+  use { "evturn/cosmic-barf" }
+
+
+
 
   -- MAYBE I CAN USE THESE PLUGINS IN THE FUTURE
   -- use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter

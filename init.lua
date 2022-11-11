@@ -3,9 +3,11 @@ require "samuel.keymaps"
 require "samuel.plugins"
 require "samuel.cmp"
 require "samuel.lsp"
-require "samuel.telescope" -- missing
-require "samuel.treesitter" -- missing
-require "samuel.lualine" -- missing
-require "samuel.impatient" -- missing
-require "samuel.indentline" -- missing
--- require "user.autocommands"
+require "samuel.telescope"
+require "samuel.treesitter"
+require "samuel.lualine"
+require "samuel.impatient"
+require "samuel.indentline"
+require "samuel.colorscheme"
+require "samuel.autocommands"
+require "samuel.nvim-tree"
