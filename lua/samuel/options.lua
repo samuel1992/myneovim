@@ -27,13 +27,14 @@ local options = {
   number = true,                           -- set numbered lines
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 2,                         -- set number column width to 2 {default 4}
-  signcolumn = "no",                      -- always show the sign column, otherwise it would shift the text each time
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
   tags = "tags",                           -- my ctags filename
   hidden = false,
+  colorcolumn="100",
   -- TODO: display extra whitespace, tab, trail, nbsp
 }
 

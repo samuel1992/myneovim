@@ -19,6 +19,9 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 ---- Normal ----
+-- Nvim-tree luav
+keymap("n", "<Leader>e", ":Ntree<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -56,7 +59,7 @@ keymap("n", "<Leader>p", '"+p', opts)
 
 -- Telescope
 keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=ivy<cr>", opts)
-keymap("n", "<Leader>b", ":Telescope buffers previewer=false theme=ivy<cr>", opts)
+keymap("n", "<Leader>b", ":Telescope buffers theme=ivy<cr>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep theme=ivy<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope oldfiles theme=ivy<cr>", opts)
 
@@ -69,6 +72,7 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
+
 
 ---- Visual Block ----
 -- Move text up and down

@@ -83,7 +83,6 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes
-  use { "evturn/cosmic-barf" }
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim" }
   use { "lifepillar/vim-solarized8" }
