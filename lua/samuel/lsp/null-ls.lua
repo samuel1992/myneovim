@@ -18,5 +18,6 @@ null_ls.setup({
 		formatting.stylua,
 
     diagnostics.flake8.with({ extra_args = { "--max-line-length=88", "--ignore=D203" } }),
+    diagnostics.psalm,
 	},
 })

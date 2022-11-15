@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 ---- Normal ----
 -- Nvim-tree luav
-keymap("n", "<Leader>e", ":Ntree<cr>", opts)
+keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -61,7 +61,9 @@ keymap("n", "<Leader>p", '"+p', opts)
 keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=ivy<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers theme=ivy<cr>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep theme=ivy<cr>", opts)
+keymap("n", "<Leader>G", ":Telescope grep_string theme=ivy<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope oldfiles theme=ivy<cr>", opts)
+keymap("n", "<Leader>m", ":Telescope marks theme=ivy bufnr=0<cr>", opts)
 
 ---- Visual ----
 -- Stay in indent mode
