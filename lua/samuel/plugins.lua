@@ -52,6 +52,7 @@ return packer.startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     }
   }
+  use { "simrat39/symbols-outline.nvim" }
 
 	-- Cmp 
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -86,9 +87,6 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim" }
   use { "lifepillar/vim-solarized8" }
   use { "evturn/cosmic-barf" }
-
-
-
 
   -- MAYBE I CAN USE THESE PLUGINS IN THE FUTURE
   -- use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter

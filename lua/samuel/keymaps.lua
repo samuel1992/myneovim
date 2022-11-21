@@ -63,7 +63,10 @@ keymap("n", "<Leader>b", ":Telescope buffers theme=ivy<cr>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep theme=ivy<cr>", opts)
 keymap("n", "<Leader>G", ":Telescope grep_string theme=ivy<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope oldfiles theme=ivy<cr>", opts)
-keymap("n", "<Leader>m", ":Telescope marks theme=ivy bufnr=0<cr>", opts)
+keymap("n", "<Leader>m", ":Telescope marks bufnr=0<cr>", opts)
+keymap("n", "<Leader>s", ":Telescope lsp_document_symbols theme=ivy<cr>", opts)
+keymap("n", "<Leader>d", ":Telescope lsp_definitions<cr>", opts)
+keymap("n", "<Leader>r", ":Telescope lsp_references<cr>", opts)
 
 ---- Visual ----
 -- Stay in indent mode
