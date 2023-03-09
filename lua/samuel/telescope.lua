@@ -89,6 +89,8 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    "ag",
+    "lazygit",
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

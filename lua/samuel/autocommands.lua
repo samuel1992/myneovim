@@ -33,6 +33,16 @@ vim.cmd [[
     autocmd!
     autocmd BufNewFile,BufRead *.py set colorcolumn=88
   augroup end
+
+  augroup _jinja2
+    autocmd!
+    autocmd BufNewFile,BufRead *.jinja2 set syntax=django
+  augroup end
+
+  augroup _go
+    autocmd!
+    autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+  augroup end
 ]]
 
 -- Autoformat

@@ -35,6 +35,7 @@ local options = {
   tags = "tags",                           -- my ctags filename
   hidden = false,
   colorcolumn="100",
+  mouse="",
   -- TODO: display extra whitespace, tab, trail, nbsp
 }
 
@@ -49,7 +50,7 @@ vim.cmd "set path+=**"
 vim.cmd "set wildignore+=*pyc,.git/**,node_modules/**,python-virtualenv/**,.venv/**"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd "ca Explore :silent Explore"
-vim.cmd 'set mouse="no"'
+vim.cmd 'ca ag Ag'
 
 -- Initial configuration for Explore
 vim.g.netrw_winsize = 17

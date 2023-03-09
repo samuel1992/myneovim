@@ -48,23 +48,24 @@ keymap("n", "//", ":noh<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Leader>qq", ":bd<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Copy and paste with X support
 keymap("n", "<Leader>y", '"+y', opts)
 keymap("n", "<Leader>p", '"+p', opts)
 
 -- Telescope
-keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=ivy<cr>", opts)
+keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=get_dropdown<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers theme=ivy<cr>", opts)
-keymap("n", "<Leader>g", ":Telescope live_grep theme=ivy<cr>", opts)
-keymap("n", "<Leader>G", ":Telescope grep_string theme=ivy<cr>", opts)
-keymap("n", "<Leader>h", ":Telescope oldfiles theme=ivy<cr>", opts)
+keymap("n", "<Leader>g", ":Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>G", ":Telescope grep_string<cr>", opts)
+keymap("n", "<Leader>h", ":Telescope oldfiles<cr>", opts)
 keymap("n", "<Leader>m", ":Telescope marks bufnr=0<cr>", opts)
-keymap("n", "<Leader>s", ":Telescope lsp_document_symbols theme=ivy<cr>", opts)
+keymap("n", "<Leader>s", ":Telescope lsp_document_symbols<cr>", opts)
 keymap("n", "<Leader>d", ":Telescope lsp_definitions<cr>", opts)
 keymap("n", "<Leader>r", ":Telescope lsp_references<cr>", opts)
 
@@ -74,17 +75,17 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+-- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+-- keymap("v", "p", '"_dP', opts)
 
 
 ---- Visual Block ----
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 ---- Terminal ----
 -- Better terminal navigation

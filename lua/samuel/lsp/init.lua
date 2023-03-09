@@ -5,4 +5,3 @@ end
 
 require "samuel.lsp.mason"
 require("samuel.lsp.handlers").setup()
-require "samuel.lsp.null-ls"
