@@ -60,6 +60,7 @@ keymap("n", "<Leader>p", '"+p', opts)
 
 -- Telescope
 keymap("n", "<Leader>f", ":Telescope find_files previewer=false theme=get_dropdown<cr>", opts)
+keymap("n", "<Leader>F", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers theme=ivy<cr>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>G", ":Telescope grep_string<cr>", opts)
