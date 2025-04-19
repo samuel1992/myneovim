@@ -44,6 +44,7 @@ return {
 				"elixir",
 				"eex",
 				"heex",
+				"apex",
 			},
 			indent = { enable = true, disable = { "python", "css" } },
 			incremental_selection = {

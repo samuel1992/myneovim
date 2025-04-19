@@ -7,12 +7,14 @@ return {
     lint.linters_by_ft = {
       javascript = { "eslint" },
       typescript = { "eslint" },
+      vue = { "eslint" },
       javascriptreact = { "eslint" },
       typescriptreact = { "eslint" },
       svelte = { "eslint" },
       python = { "pylint" },
       ruby = { "rubocop" },
       go = { "golangcilint" },
+      lua = { "luacheck" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
