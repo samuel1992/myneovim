@@ -60,6 +60,15 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
 	end,
 })
 
+-- Add filetype detection for Apex files
+vim.filetype.add({
+  extension = {
+    cls = "apex",
+    trigger = "apex",
+    apex = "apex"
+  }
+})
+
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set path+=**")
 vim.cmd("set wildignore+=*pyc,.git/**,node_modules/**,python-virtualenv/**,.venv/**")
