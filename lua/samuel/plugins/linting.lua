@@ -14,7 +14,7 @@ return {
       python = { "pylint" },
       ruby = { "rubocop" },
       go = { "golangcilint" },
-      lua = { "luacheck" },
+      -- lua = { "luacheck" },  -- Disabled until luacheck is installed
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

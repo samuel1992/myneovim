@@ -14,6 +14,18 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+		-- Configure diagnostics to only show icons without text
+		vim.diagnostic.config({
+			virtual_text = {
+				prefix = "", -- or any other icon you prefer
+				format = function(_) return "" end, -- Empty string for no text
+			},
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
+		})
+
 		-- Setup mason
 		mason.setup()
 
