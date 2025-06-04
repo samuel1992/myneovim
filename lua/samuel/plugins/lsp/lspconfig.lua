@@ -11,7 +11,6 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local mason = require("mason")
-		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		-- Configure diagnostics to only show icons without text
@@ -29,28 +28,8 @@ return {
 		-- Setup mason
 		mason.setup()
 
-		-- Setup mason-lspconfig with ensure_installed
-		mason_lspconfig.setup({
-			ensure_installed = {
-				"tsserver",
-				"lua_ls",
-				"jsonls",
-				"html",
-				"bashls",
-			},
-		})
-
 		-- Capabilities for nvim-cmp
 		local capabilities = cmp_nvim_lsp.default_capabilities()
-
-		-- Setup handler for all servers
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-		})
 
 		-- Keybindings on LSP attach
 		local keymap = vim.keymap
