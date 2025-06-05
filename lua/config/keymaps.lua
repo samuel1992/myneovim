@@ -81,13 +81,13 @@ function M.setup()
 
 	---- Salesforce ----
 	keymap("n", "<Leader>sd", function()
-		vim.cmd("split | terminal sf project deploy start --source-dir " .. vim.fn.expand("%") .. " --json --wait 10")
+		vim.cmd("split | terminal sf project deploy start --source-dir " .. vim.fn.expand("%") .. " --wait 10")
 	end, { desc = "Deploy current file" })
 
 	keymap("n", "<Leader>st", function()
 		local filename = vim.fn.expand("%:t:r")
 		vim.cmd(
-			"split | terminal sf force apex test run --classnames " .. filename .. " --resultformat json --codecoverage"
+			"split | terminal sf force apex test run --classnames " .. filename .. " --resultformat human"
 		)
 	end, { desc = "Test current class" })
 
