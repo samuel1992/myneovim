@@ -147,12 +147,12 @@ return {
 				cmd = { "elixir-ls" },
 			})
 
-			-- Apex LSP using the same jar as Cursor
+			-- Apex LSP using local jar
 			lspconfig.apex_ls.setup({
 				cmd = {
-					"java",
+					"/usr/bin/java",
 					"-cp",
-					"/Users/samuel/.cursor/extensions/salesforce.salesforcedx-vscode-apex-63.15.1/dist/apex-jorje-lsp.jar",
+					"/usr/local/bin/apex-jorje-lsp.jar",
 					"-Ddebug.internal.errors=true",
 					"-Ddebug.semantic.errors=false",
 					"-Ddebug.completion.statistics=false",
@@ -161,6 +161,7 @@ return {
 				},
 				filetypes = { "apex" },
 				root_dir = lspconfig.util.root_pattern("sfdx-project.json", ".git"),
+				single_file_support = false,
 			})
 		end,
 	},
@@ -180,10 +181,37 @@ return {
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
+				window = {
+					completion = {
+						border = "rounded",
+						winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+						scrollbar = false,
+						col_offset = -3,
+						side_padding = 0,
+					},
+					documentation = {
+						border = "rounded",
+						winhighlight = "Normal:CmpDoc",
+						max_width = 80,
+						max_height = 20,
+					},
+				},
+				formatting = {
+					format = function(entry, vim_item)
+						vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
+						return vim_item
+					end,
+				},
 				mapping = cmp.mapping.preset.insert({
+					["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-h>"] = cmp.mapping.abort(),
+					["<C-l>"] = cmp.mapping.confirm({ select = true }),
 					["<Tab>"] = cmp.mapping.select_next_item(),
 					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<C-u>"] = cmp.mapping.scroll_docs(-4),
+					["<C-d>"] = cmp.mapping.scroll_docs(4),
 				}),
 				sources = {
 					{ name = "copilot", group_index = 2 },
@@ -192,29 +220,74 @@ return {
 			})
 		end,
 	},
-	{
-		"Exafunction/windsurf.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
-		end,
-	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({})
-		end,
-	},
+
+	-- Copilot
 	{
 		"zbirenbaum/copilot-cmp",
 		config = function()
 			require("copilot_cmp").setup()
 		end,
+	},
+	{
+		-- 'github/copilot.vim',
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				panel = {
+					enabled = false,
+					auto_refresh = true,
+					-- keymap = {
+					--   jump_prev = "[[",
+					--   jump_next = "]]",
+					--   accept = "<CR>",
+					--   refresh = "gr",
+					--   open = "<M-CR>"
+					-- },
+					-- layout = {
+					--   position = "bottom", -- | top | left | right
+					--   ratio = 0.4
+					-- },
+				},
+				suggestion = {
+					enabled = false,
+					-- auto_trigger = true
+					-- debounce = 75,
+					-- keymap = {
+					--   accept = "<Tab>",
+					--   accept_word = false,
+					--   accept_line = false,
+					--   next = "<M-]>",
+					--   prev = "<M-[>",
+					--   dismiss = "<C-]>",
+					-- },
+				},
+				filetypes = {
+					yaml = false,
+					markdown = true,
+					help = false,
+					gitcommit = false,
+					gitrebase = false,
+					hgcommit = false,
+					svn = false,
+					cvs = false,
+					["."] = false,
+				},
+			})
+		end,
+	},
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+		opts = {
+			-- See Configuration section for options
+		},
+		-- See Commands section for default commands if you want to lazy load on them
 	},
 
 	-- Git
