@@ -181,6 +181,17 @@ api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+-- Apex (Salesforce) indentation
+api.nvim_create_autocmd("FileType", {
+  group = augroup("_apex"),
+  pattern = "apex",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.expandtab = true
+  end,
+})
+
 -- Go formatting
 api.nvim_create_autocmd("BufWritePre", {
   group = augroup("_go"),
