@@ -321,7 +321,7 @@ return {
 					html = { "prettier" },
 					css = { "prettier" },
 					markdown = { "prettier" },
-					go = { "gofmt" },
+					go = { "gofmt", "goimports" },
 				},
 			})
 			vim.keymap.set({ "n", "v" }, "<leader>lf", function()
